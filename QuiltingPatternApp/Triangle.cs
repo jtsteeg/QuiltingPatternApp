@@ -10,7 +10,7 @@ namespace QuiltingPatternApp
     {
         public Triangle(int lengthInput, string colorInput)
         {
-            this.numberOfSides = 3;
+            this.Name = "Triangle";
             this.Length = lengthInput;
             this.Color = colorInput;
         }

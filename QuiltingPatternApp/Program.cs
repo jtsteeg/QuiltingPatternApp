@@ -36,6 +36,23 @@ namespace QuiltingPatternApp
                         userCommand = Console.ReadLine();
                         break;
 
+                    case "see pattern":
+                        if(quiltPatternList.Count < 1)
+                        {
+                            Console.WriteLine("First add a shape to the pattern!");
+                            userCommand = Console.ReadLine();
+                            break;
+                        }
+                        else
+                        {
+                            foreach (var shape in quiltPatternList)
+                            {
+                                Console.WriteLine(shape.Name + " " + shape.Color);
+                            }
+                            Console.WriteLine($"would you like to enter another shape to the pattern?");
+                            userCommand = Console.ReadLine();
+                            break;
+                        }
 
                     default:
                         Console.WriteLine("unrecognized command! please try again.");

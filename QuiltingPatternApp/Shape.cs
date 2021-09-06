@@ -8,7 +8,7 @@ namespace QuiltingPatternApp
 {
     public abstract class Shape
     {
-        public int numberOfSides  { get; set; }
+        public string Name  { get; set; }
         public int Length { get; set; }
         public string Color { get; set; }
     }
