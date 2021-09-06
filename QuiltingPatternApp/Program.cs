@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace QuiltingPatternApp
 {
@@ -9,6 +10,7 @@ namespace QuiltingPatternApp
             bool isRunning = true;
             int shapeLength;
             string shapecolor;
+            List<Shape> quiltPatternList = new List<Shape>();
 
 
             Console.WriteLine("Welcome to the quilting pattern app! Type 'triangle' to add a triangle to the pattern. Enter 'exit' to quit");
@@ -28,6 +30,7 @@ namespace QuiltingPatternApp
                         Console.WriteLine("What color?");
                         shapecolor = Console.ReadLine();
                         Triangle T = new Triangle(shapeLength, shapecolor);
+                        quiltPatternList.Add(T);
                         Console.WriteLine($"you just added a Triangle size {T.Length} and color {T.Color}!");
                         Console.WriteLine($"would you like to enter another shape to the pattern?");
                         userCommand = Console.ReadLine();
