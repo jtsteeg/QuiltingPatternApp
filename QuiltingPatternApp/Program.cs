@@ -50,6 +50,18 @@ namespace QuiltingPatternApp
                         userCommand = Console.ReadLine();
                         break;
 
+                    case "square":
+                        Console.WriteLine("What size?");
+                        shapeLength = Int32.Parse(Console.ReadLine());
+                        Console.WriteLine("What color?");
+                        shapecolor = Console.ReadLine();
+                        Square S = new Square(shapeLength, shapecolor);
+                        quiltPatternList.Add(S);
+                        Console.WriteLine($"you just added a Square size {S.Length} and color {S.Color}!");
+                        Console.WriteLine($"would you like to enter another shape to the pattern?");
+                        userCommand = Console.ReadLine();
+                        break;
+
                     case "see pattern":
                         if(quiltPatternList.Count < 1)
                         {
