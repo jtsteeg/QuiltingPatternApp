@@ -36,6 +36,20 @@ namespace QuiltingPatternApp
                         userCommand = Console.ReadLine();
                         break;
 
+                    case "rectangle":
+                        Console.WriteLine("How Long?");
+                        shapeLength = Int32.Parse(Console.ReadLine());
+                        Console.WriteLine("How Wide?");
+                        int shapeWidth = Int32.Parse(Console.ReadLine());
+                        Console.WriteLine("What color?");
+                        shapecolor = Console.ReadLine();
+                        Rectangle R = new Rectangle(shapeLength, shapeWidth, shapecolor);
+                        quiltPatternList.Add(R);
+                        Console.WriteLine($"you just added a Rectangle size {R.Length} / {R.Width} and color {R.Color}!");
+                        Console.WriteLine($"would you like to enter another shape to the pattern?");
+                        userCommand = Console.ReadLine();
+                        break;
+
                     case "see pattern":
                         if(quiltPatternList.Count < 1)
                         {
