@@ -14,5 +14,10 @@ namespace QuiltingPatternApp
             this.Length = lengthInput;
             this.Color = colorInput;
         }
+
+        public override void drawShape()
+        {
+            Console.WriteLine(Name + ", " + Length + ", " + Color);   
+        }
     }
 }

@@ -61,7 +61,7 @@ namespace QuiltingPatternApp
                         {
                             foreach (var shape in quiltPatternList)
                             {
-                                Console.WriteLine(shape.Name + " " + shape.Color);
+                                shape.drawShape();
                             }
                             Console.WriteLine($"would you like to enter another shape to the pattern?");
                             userCommand = Console.ReadLine();
