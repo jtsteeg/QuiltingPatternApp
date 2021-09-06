@@ -19,7 +19,7 @@ namespace QuiltingPatternApp
 
         public override void drawShape()
         {
-            Console.WriteLine(Name + ", Length: " + Length + ", Width: " + Width + ", " + Color);
+            Console.WriteLine(Name + ", Area: " + Length*Width + ", " + Color);
         }
     }
 }
