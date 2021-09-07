@@ -11,12 +11,11 @@ namespace QuiltingPatternApp
             int shapeLength;
             string shapecolor;
             List<Shape> quiltPatternList = new List<Shape>();
-
-
-            Console.Write("Welcome to the quilting pattern app! Please enter one of the following to begin:\ntriangle - add a triangle\nrectangle - add a rectangle\nsquare - add a square\nsee pattern - review list of shapes entered\nexit - quit program\n");
-            string userCommand = Console.ReadLine().ToLower();
+            Console.WriteLine("Welcome to the quilting pattern app!");
             while (isRunning == true)
             {
+                Console.Write("Please enter one of the following:\ntriangle - add a triangle\nrectangle - add a rectangle\nsquare - add a square\nsee pattern - review list of shapes entered\nexit - quit program\n");
+                string userCommand = Console.ReadLine().ToLower();
                 switch (userCommand)
                 {
                     case "exit":
@@ -40,9 +39,7 @@ namespace QuiltingPatternApp
                         shapecolor = Console.ReadLine();
                         Triangle T = new Triangle(shapeLength, leftSide, rightSide, shapecolor);
                         quiltPatternList.Add(T);
-                        Console.WriteLine($"you just added a Triangle size {T.getArea()} and color {T.Color}!");
-                        Console.WriteLine($"would you like to enter another shape to the pattern?");
-                        userCommand = Console.ReadLine();
+                        Console.WriteLine($"you just added a Triangle Area {T.getArea()} and color {T.Color}!");
                         break;
 
                     case "rectangle":
@@ -59,9 +56,7 @@ namespace QuiltingPatternApp
                         shapecolor = Console.ReadLine();
                         Rectangle R = new Rectangle(shapeLength, shapeWidth, shapecolor);
                         quiltPatternList.Add(R);
-                        Console.WriteLine($"you just added a Rectangle size {R.getArea()} and color {R.Color}!");
-                        Console.WriteLine($"would you like to enter another shape to the pattern?");
-                        userCommand = Console.ReadLine();
+                        Console.WriteLine($"you just added a Rectangle Area {R.getArea()} and color {R.Color}!");
                         break;
 
                     case "square":
@@ -77,15 +72,12 @@ namespace QuiltingPatternApp
                         Square S = new Square(shapeLength, shapecolor);
                         quiltPatternList.Add(S);
                         Console.WriteLine($"you just added a Square Area {S.getArea()} and color {S.Color}!");
-                        Console.WriteLine($"would you like to enter another shape to the pattern?");
-                        userCommand = Console.ReadLine();
                         break;
 
                     case "see pattern":
                         if(quiltPatternList.Count < 1)
                         {
-                            Console.WriteLine("First add a shape to the pattern!");
-                            userCommand = Console.ReadLine();
+                            Console.Write("First add a shape to the pattern! ");
                             break;
                         }
                         else
@@ -94,14 +86,12 @@ namespace QuiltingPatternApp
                             {
                                 shape.drawShape();
                             }
-                            Console.WriteLine($"would you like to enter another shape to the pattern?");
-                            userCommand = Console.ReadLine();
+                            Console.WriteLine("");
                             break;
                         }
 
                     default:
-                        Console.WriteLine("unrecognized command! please try again.");
-                        userCommand = Console.ReadLine();
+                        Console.Write("unrecognized command! ");
                         break;
                 }
             }

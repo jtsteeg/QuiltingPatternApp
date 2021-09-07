@@ -18,7 +18,6 @@ namespace QuiltingPatternApp
             this.Side2 = Side2Input;
             this.Color = colorInput;
         }
-
         //uses herons formula
         public override int getArea()
         {
@@ -30,7 +29,6 @@ namespace QuiltingPatternApp
 
             return area;
         }
-
         public override void drawShape()
         {
             Console.WriteLine(Name + ", Area: " + getArea() + ", " + Color);   

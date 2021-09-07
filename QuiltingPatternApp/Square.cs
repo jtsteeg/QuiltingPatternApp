@@ -14,12 +14,10 @@ namespace QuiltingPatternApp
             this.Length = lengthInput;
             this.Color = colorInput;
         }
-
         public override int getArea()
         {
             return Length*Length;  
         }
-
         public override void drawShape()
         {
             Console.WriteLine(Name + ", Area:  " + getArea() + ", " + Color);
