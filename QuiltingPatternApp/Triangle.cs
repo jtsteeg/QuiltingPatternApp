@@ -33,5 +33,24 @@ namespace QuiltingPatternApp
         {
             Console.WriteLine(Name + ", Area: " + getArea() + ", " + Color);   
         }
+
+        public static Triangle promptTriangle()
+        {
+            Console.WriteLine("how long would you like the base of the triangle?");
+            int triangleBase = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("how long would you like the left side of the triangle?");
+            int leftSide = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("how long would you like the right side of the triangle?");
+            int rightSide = Int32.Parse(Console.ReadLine());
+            if (triangleBase < 1 || leftSide < 1 || rightSide < 1)
+            {
+                Console.WriteLine("all sides of your shape must be bigger than 0!");
+                return null;
+            }
+            Console.WriteLine("What color would you like the triangle?");
+            var triangleColor = Console.ReadLine();
+
+            return new Triangle(triangleBase, leftSide, rightSide, triangleColor);
+        }
     }
 }

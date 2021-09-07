@@ -16,7 +16,7 @@ namespace QuiltingPatternApp
             this.Width = widthInput;
             this.Color = colorInput;
         }
-
+        
         public override int getArea()
         {
             return Length*Width;  
@@ -26,5 +26,23 @@ namespace QuiltingPatternApp
         {
             Console.WriteLine(Name + ", Area: " + getArea() + ", " + Color);
         }
+
+        public static Rectangle promptRectangle()
+        {
+            Console.WriteLine("How Long would you like your rectangle?");
+            var rectangleLength = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("How Wide?");
+            int rectangleWidth = Int32.Parse(Console.ReadLine());
+            if (rectangleLength < 1 || rectangleWidth < 1)
+            {
+                Console.WriteLine("all sides of your shape must be bigger than 0!");
+                return null;
+            }
+            Console.WriteLine("What color?");
+            var rectangleColor = Console.ReadLine();
+
+            return new Rectangle(rectangleLength, rectangleWidth, rectangleColor);
+        }
+
     }
 }

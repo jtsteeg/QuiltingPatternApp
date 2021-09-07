@@ -12,10 +12,8 @@ namespace QuiltingPatternApp
         public int Length { get; set; }
         public string Color { get; set; }
 
-        public virtual int getArea() 
-        {
-            return 1;
-        }
+        public abstract int getArea();
+      
         public virtual void drawShape() { }
     }  
 }
