@@ -37,7 +37,7 @@ namespace QuiltingPatternApp
                         break;
 
                     case "see pattern":
-                        if(quiltPatternList.Count < 1)
+                        if (quiltPatternList.Count < 1)
                         {
                             Console.Write("First add a shape to the pattern! ");
                             break;
