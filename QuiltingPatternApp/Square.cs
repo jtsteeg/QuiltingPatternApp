@@ -17,12 +17,12 @@ namespace QuiltingPatternApp
 
         public override int getArea()
         {
-            return 1;  
+            return Length*Length;  
         }
 
         public override void drawShape()
         {
-            Console.WriteLine(Name + ", Area:  " + Length * Length + ", " + Color);
+            Console.WriteLine(Name + ", Area:  " + getArea() + ", " + Color);
         }
     }
 }

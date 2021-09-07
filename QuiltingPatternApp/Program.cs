@@ -35,7 +35,7 @@ namespace QuiltingPatternApp
                         shapecolor = Console.ReadLine();
                         Triangle T = new Triangle(shapeLength, leftSide, rightSide, shapecolor);
                         quiltPatternList.Add(T);
-                        Console.WriteLine($"you just added a Triangle size {T.Length} and color {T.Color}!");
+                        Console.WriteLine($"you just added a Triangle size {T.getArea()} and color {T.Color}!");
                         Console.WriteLine($"would you like to enter another shape to the pattern?");
                         userCommand = Console.ReadLine();
                         break;
@@ -49,7 +49,7 @@ namespace QuiltingPatternApp
                         shapecolor = Console.ReadLine();
                         Rectangle R = new Rectangle(shapeLength, shapeWidth, shapecolor);
                         quiltPatternList.Add(R);
-                        Console.WriteLine($"you just added a Rectangle size {R.Length} / {R.Width} and color {R.Color}!");
+                        Console.WriteLine($"you just added a Rectangle size {R.getArea()} and color {R.Color}!");
                         Console.WriteLine($"would you like to enter another shape to the pattern?");
                         userCommand = Console.ReadLine();
                         break;
@@ -61,7 +61,7 @@ namespace QuiltingPatternApp
                         shapecolor = Console.ReadLine();
                         Square S = new Square(shapeLength, shapecolor);
                         quiltPatternList.Add(S);
-                        Console.WriteLine($"you just added a Square size {S.Length} and color {S.Color}!");
+                        Console.WriteLine($"you just added a Square size {S.getArea()} and color {S.Color}!");
                         Console.WriteLine($"would you like to enter another shape to the pattern?");
                         userCommand = Console.ReadLine();
                         break;
