@@ -31,6 +31,11 @@ namespace QuiltingPatternApp
                         int leftSide = Int32.Parse(Console.ReadLine());
                         Console.WriteLine("how long would you like the right side?");
                         int rightSide = Int32.Parse(Console.ReadLine());
+                        if (shapeLength < 1 || leftSide < 1 || rightSide < 1)
+                        {
+                            Console.WriteLine("all sides of your shape must be bigger than 0!");
+                            break;
+                        }
                         Console.WriteLine("What color?");
                         shapecolor = Console.ReadLine();
                         Triangle T = new Triangle(shapeLength, leftSide, rightSide, shapecolor);
@@ -45,6 +50,11 @@ namespace QuiltingPatternApp
                         shapeLength = Int32.Parse(Console.ReadLine());
                         Console.WriteLine("How Wide?");
                         int shapeWidth = Int32.Parse(Console.ReadLine());
+                        if (shapeLength < 1 || shapeWidth < 1)
+                        {
+                            Console.WriteLine("all sides of your shape must be bigger than 0!");
+                            break;
+                        }
                         Console.WriteLine("What color?");
                         shapecolor = Console.ReadLine();
                         Rectangle R = new Rectangle(shapeLength, shapeWidth, shapecolor);
@@ -57,11 +67,16 @@ namespace QuiltingPatternApp
                     case "square":
                         Console.WriteLine("What size?");
                         shapeLength = Int32.Parse(Console.ReadLine());
+                        if(shapeLength < 1)
+                        {
+                            Console.WriteLine("all sides of your shape must be bigger than 0!");
+                            break;
+                        }
                         Console.WriteLine("What color?");
                         shapecolor = Console.ReadLine();
                         Square S = new Square(shapeLength, shapecolor);
                         quiltPatternList.Add(S);
-                        Console.WriteLine($"you just added a Square size {S.getArea()} and color {S.Color}!");
+                        Console.WriteLine($"you just added a Square Area {S.getArea()} and color {S.Color}!");
                         Console.WriteLine($"would you like to enter another shape to the pattern?");
                         userCommand = Console.ReadLine();
                         break;
