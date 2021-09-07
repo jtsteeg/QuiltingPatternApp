@@ -13,8 +13,8 @@ namespace QuiltingPatternApp
             List<Shape> quiltPatternList = new List<Shape>();
 
 
-            Console.WriteLine("Welcome to the quilting pattern app! Type 'triangle' to add a triangle to the pattern. Enter 'exit' to quit");
-            string userCommand = Console.ReadLine();
+            Console.Write("Welcome to the quilting pattern app! Please enter one of the following to begin:\ntriangle - add a triangle\nrectangle - add a rectangle\nsquare - add a square\nsee pattern - review list of shapes entered\nexit - quit program\n");
+            string userCommand = Console.ReadLine().ToLower();
             while (isRunning == true)
             {
                 switch (userCommand)
@@ -25,11 +25,15 @@ namespace QuiltingPatternApp
                         break;
 
                     case "triangle":
-                        Console.WriteLine("What size?");
+                        Console.WriteLine("how long would you like the base??");
                         shapeLength = Int32.Parse(Console.ReadLine());
+                        Console.WriteLine("how long would you like the left side?");
+                        int leftSide = Int32.Parse(Console.ReadLine());
+                        Console.WriteLine("how long would you like the right side?");
+                        int rightSide = Int32.Parse(Console.ReadLine());
                         Console.WriteLine("What color?");
                         shapecolor = Console.ReadLine();
-                        Triangle T = new Triangle(shapeLength, shapecolor);
+                        Triangle T = new Triangle(shapeLength, leftSide, rightSide, shapecolor);
                         quiltPatternList.Add(T);
                         Console.WriteLine($"you just added a Triangle size {T.Length} and color {T.Color}!");
                         Console.WriteLine($"would you like to enter another shape to the pattern?");

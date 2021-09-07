@@ -17,6 +17,11 @@ namespace QuiltingPatternApp
             this.Color = colorInput;
         }
 
+        public override int getArea()
+        {
+            return 1;  
+        }
+
         public override void drawShape()
         {
             Console.WriteLine(Name + ", Area: " + Length*Width + ", " + Color);
